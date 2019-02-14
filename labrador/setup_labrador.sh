@@ -6,6 +6,7 @@ sudo apt-get install openssh-server vim git python3-dev python3-pip python3-setu
 
 CV_LIB=/home/caninos/lib/opencv_py37/lib/
 cd .cv2py37
+[ "$1" == "--no-deps" ] && no_deps=--no-deps || no_deps=deps
 sudo ./opencv_py37.sh $1 $CV_LIB
 cd ..
 
