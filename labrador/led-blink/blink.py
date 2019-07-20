@@ -5,9 +5,9 @@ led_pin = GPIO(0, "out")
 
 while True:
 	print("Ligando LED")
-	led_pin.write(1)
+	led_pin.write(GPIO.HIGH)
 	time.sleep(1)
 
 	print("Desligando LED")
-	led_pin.write(0)
+	led_pin.write(GPIO.LOW)
 	time.sleep(1)
