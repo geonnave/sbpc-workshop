@@ -30,10 +30,19 @@ install_deps() {
 
 [ "$1" != "--no-deps" ] && install_deps
 
-opencv_lib_dir=$(pwd)/lib
+HOME=/home/caninos
+CV_LIB=$HOME/lib/opencv_py37/lib
 
-sudo cp "$opencv_lib_dir"/python3/cv2.cpython-37m-arm-linux-gnueabihf.so /usr/local/lib/python3.7/dist-packages/cv2.so
+mkdir -p $CV_LIB
+cp -r ./lib/* $CV_LIB/
+
+sudo cp "$CV_LIB"/python3/cv2.cpython-37m-arm-linux-gnueabihf.so /usr/local/lib/python3.7/dist-packages/cv2.so
 
 sudo touch /etc/ld.so.conf.d/opencv.conf
-sudo echo "$opencv_lib_dir" > /etc/ld.so.conf.d/opencv.conf
-echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$opencv_lib_dir" >> /home/caninos/.profile
+sudo echo "$CV_LIB" > /etc/ld.so.conf.d/opencv.conf
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CV_LIB" >> $HOME/.bashrc
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CV_LIB" >> $HOME/.profile
+
+sed -i -E "s|PUT_CV_LIB|$CV_LIB|g" ../idle.sh
+
+exit 0
