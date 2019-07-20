@@ -31,10 +31,10 @@ print("Encontrou %d faces!" % (n_faces))
 led_pin = GPIO(0, "out")
 if n_faces > 0:
 	print("Ligando LED")
-	led_pin.write(1)
+	led_pin.write(GPIO.HIGH)
 else:
 	print("Desligando LED")
-	led_pin.write(0)
+	led_pin.write(GPIO.LOW)
 
 # Desenhando um retângulo ao redor das faces
 for (x, y, w, h) in faces:

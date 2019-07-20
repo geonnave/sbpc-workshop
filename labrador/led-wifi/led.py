@@ -4,18 +4,18 @@ import json
 
 app = Flask(__name__)
 led_pin = GPIO(0, "out")
-led_status = 0
+led_status = GPIO.LOW
 
 @app.route('/led')
 def led():
     global led_status
-    if led_status == 0:
+    if led_status == GPIO.LOW:
         print("Ligando LED")
-        led_status = 1
+        led_status = GPIO.HIGH
         led_pin.write(led_status)
     else:
         print("Desligando LED")
-        led_status = 0
+        led_status = GPIO.LOW
         led_pin.write(led_status)
     return json.dumps({"led_status": led_status})
 
