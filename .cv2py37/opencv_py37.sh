@@ -36,4 +36,4 @@ sudo cp "$opencv_lib_dir"/python3/cv2.cpython-37m-arm-linux-gnueabihf.so /usr/lo
 
 sudo touch /etc/ld.so.conf.d/opencv.conf
 sudo echo "$opencv_lib_dir" > /etc/ld.so.conf.d/opencv.conf
-echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$opencv_lib_dir" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$opencv_lib_dir" >> /home/caninos/.profile
