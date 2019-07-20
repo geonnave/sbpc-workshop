@@ -9,4 +9,6 @@ cd ..
 pip3 install wheel
 pip3 install -r requirements.txt
 
+[ -z "$(grep 'alias python' ~/.bashrc)" ] && echo "alias python=python3" >> .bashrc
+
 exit 0
