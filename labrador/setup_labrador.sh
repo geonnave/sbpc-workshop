@@ -22,4 +22,7 @@ export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:$CV_LIB
 exit 0
 EOF
 
+read -p "Pronto."
+
 exit 0
+

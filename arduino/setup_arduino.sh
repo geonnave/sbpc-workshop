@@ -13,4 +13,6 @@ cd -
 sudo usermod -a -G dialout $(whoami)
 echo Now log out and log in again to be able to use the Arduino via serial
 
+read -p "Pronto."
+
 exit 0
