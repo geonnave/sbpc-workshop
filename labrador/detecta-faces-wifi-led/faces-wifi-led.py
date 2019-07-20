@@ -5,7 +5,7 @@ import base64
 from gpio import GPIO
 
 # Pegando dados do usuário e inicializando o detector
-targetIp = sys.argv[1]
+targetIp = "192.168.6.163"
 cascPath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
 

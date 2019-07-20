@@ -2,7 +2,7 @@ import cv2
 import sys
 
 # Pegando dados do usuário e inicializando o detector
-imagePath = sys.argv[1]
+imagePath = "friends.jpg"
 cascPath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
 
