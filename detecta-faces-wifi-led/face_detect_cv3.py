@@ -2,7 +2,7 @@ import cv2
 import sys
 import requests
 import base64
-import os
+from gpio import GPIO
 
 # Pegando dados do usuário e inicializando o detector
 targetIp = sys.argv[1]
@@ -28,15 +28,13 @@ faces = faceCascade.detectMultiScale(
 # Verifica se encontrou faces e acende o LED
 n_faces = len(faces)
 print("Encontrou %d faces!" % (n_faces))
-
-led_pin = 0
-os.system("gpio mode %d out" % (led_pin))
+led_pin = GPIO(0, "out")
 if n_faces > 0:
 	print("Ligando LED")
-	os.system("gpio write %d 1" % (led_pin))
+	led_pin.write(1)
 else:
 	print("Desligando LED")
-	os.system("gpio write %d 0" % (led_pin))
+	led_pin.write(0)
 
 # Desenhando um retângulo ao redor das faces
 for (x, y, w, h) in faces:
