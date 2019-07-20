@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install -y curl
+
 mkdir -p ~/tmp
 cd ~/tmp
 curl -k 'https://downloads.arduino.cc/arduino-1.8.9-linuxarm.tar.xz' > arduino.tar.xz
