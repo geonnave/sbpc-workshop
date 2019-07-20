@@ -28,7 +28,7 @@ install_deps() {
 	sudo apt-get install -y doxygen
 }
 
-install_deps
+[ "$1" != "--no-deps" ] && install_deps
 
 opencv_lib_dir=$(pwd)/lib
 

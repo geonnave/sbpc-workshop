@@ -1,11 +1,12 @@
 #!/bin/bash
 
-sudo apt-get install openssh-server vim git python-dev python3-dev
+sudo apt-get install openssh-server vim git python-dev python3-dev python-pip python3-pip python-setuptools python3-setuptools
 
 cd .cv2py37
-./opencv_py37.sh
+sudo ./opencv_py37.sh $@
 cd ..
 
-pip3 install requirements.txt
+pip3 install wheel
+pip3 install -r requirements.txt
 
 exit 0
