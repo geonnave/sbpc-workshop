@@ -31,7 +31,8 @@ install_deps() {
 [ "$1" != "--no-deps" ] && install_deps
 
 HOME=/home/caninos
-CV_LIB=$HOME/lib/opencv_py37/lib
+[ ! -z "$2" ] && CV_LIB=$2 || exit 1
+echo CV_LIB is $CV_LIB
 
 mkdir -p $CV_LIB
 cp -r ./lib/* $CV_LIB/
@@ -42,7 +43,5 @@ sudo touch /etc/ld.so.conf.d/opencv.conf
 sudo echo "$CV_LIB" > /etc/ld.so.conf.d/opencv.conf
 echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CV_LIB" >> $HOME/.bashrc
 echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CV_LIB" >> $HOME/.profile
-
-sed -i -E "s|PUT_CV_LIB|$CV_LIB|g" ../idle.sh
 
 exit 0
