@@ -32,8 +32,10 @@ print("Encontrou %d faces!" % (n_faces))
 led_pin = 0
 os.system("gpio mode %d out" % (led_pin))
 if n_faces > 0:
+	print("Ligando LED")
 	os.system("gpio write %d 1" % (led_pin))
 else:
+	print("Desligando LED")
 	os.system("gpio write %d 0" % (led_pin))
 
 # Desenhando um retângulo ao redor das faces
