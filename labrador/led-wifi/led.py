@@ -6,17 +6,19 @@ app = Flask(__name__)
 led_pin = GPIO(0, "out")
 led_status = GPIO.LOW
 
+@app.route('/')
+def index():
+    return json.dumps({"info": "acesse a rota /led"})
+
 @app.route('/led')
 def led():
     global led_status
     if led_status == GPIO.LOW:
         print("Ligando LED")
-        led_status = GPIO.HIGH
-        led_pin.write(led_status)
+        # COMPLETAR
     else:
         print("Desligando LED")
-        led_status = GPIO.LOW
-        led_pin.write(led_status)
+        # COMPLETAR
     return json.dumps({"led_status": led_status})
 
 if __name__ == '__main__':

@@ -17,18 +17,10 @@ image = cv2.imread("image.jpg")
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Detectando as faces na imagem
-faces = faceCascade.detectMultiScale(
-    gray,
-    scaleFactor=1.1,
-    minNeighbors=5,
-    minSize=(30, 30)
-)
-
-print("Encontrou {0} faces!".format(len(faces)))
+# COMPLETAR
 
 # Desenhando um retângulo ao redor das faces
-for (x, y, w, h) in faces:
-    cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+# COMPLETAR
 
-cv2.imshow("Faces encontradas", image)
-cv2.waitKey(0)
+# Mostranddo a imagem na tela
+# COMPLETAR
