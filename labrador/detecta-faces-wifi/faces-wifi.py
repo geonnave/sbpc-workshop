@@ -4,7 +4,7 @@ import requests
 import base64
 
 # Pegando dados do usuário e inicializando o detector
-targetIp = "192.168.6.163"
+targetIp = "localhost"
 cascPath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
 
